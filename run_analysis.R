@@ -37,7 +37,7 @@ train_test_DT <- rbind(trainDT, testDT)
 ## Fourth, extracting the mean and standard deviation for each measurement
 # Subsetting the mean and standard deviation data with the corresponding activity and subject ID
 col_names <- colnames(train_test_DT)
-mean_std <- (grep("activityID", col_names) | grep("subjectID", col_names) | grep("mean", col_names) |grep("std", col_names))
+mean_std <- (grepl("activityID", col_names) | grepl("subjectID", col_names) | grepl("mean..", col_names) |grepl("std..", col_names))
 mean_std_set <- train_test_DT[, mean_std == TRUE]
 
 ## Fifth, adding descriptive activity names to the activities in the data set
